@@ -53,7 +53,7 @@ console.log(encoded, decoded);
 
 then
 
-`const {BaseConverter, ASCIIEncoder} require('Universal-Encoder')`
+`const {BaseConverter, ASCIIEncoder} = require('universal-encoder');`
 
 ### Use cases
 
