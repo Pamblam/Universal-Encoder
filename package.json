@@ -1,6 +1,6 @@
 {
   "name": "universal-encoder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "Universal-Encoder.js",
   "scripts": {
@@ -8,5 +8,9 @@
   },
   "keywords": ["encode", "base64", "binary", "decimal", "base256", "base8", "base16", "hex", "decode"],
   "author": "Robert Parham",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pamblam/Universal-Encoder"
+  }
 }

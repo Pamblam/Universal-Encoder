@@ -49,7 +49,11 @@ console.log(encoded, decoded);
 
 ### Using Node?
 
-Don't forget to `const {BaseConverter, ASCIIEncoder} require('Universal-Encoder')`
+`npm install universal-encoder`
+
+then
+
+`const {BaseConverter, ASCIIEncoder} require('Universal-Encoder')`
 
 ### Use cases
 
