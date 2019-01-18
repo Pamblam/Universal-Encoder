@@ -1,0 +1,12 @@
+{
+  "name": "universal-encoder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Universal-Encoder.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["encode", "base64", "binary", "decimal", "base256", "base8", "base16", "hex", "decode"],
+  "author": "Robert Parham",
+  "license": "ISC"
+}

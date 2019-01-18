@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Convert an image to a data URI</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<script src="../Universal-Encoder.js"></script>
+		<script>
+			// This experiment creates a data url from any resource url.
+			// in this case it is an image which is added to the page.
+			// This is just proof of concept. You can acheive the same thing
+			// by fetching a blob and calling URL.createObjectURL(blob)
+			
+			var image_url = 'https://i.imgur.com/8B8ye29.jpg';
+			
+			resourceToDataURI(image_url).then(data_uri=>{
+				var img = new Image();
+				img.onload = function(){
+					document.body.appendChild(this);
+				};
+				img.onerror = console.error;
+				img.src = data_uri;
+			}).catch(console.error);
+			
+			function resourceToDataURI(url){
+				return new Promise((resolve, reject)=>{
+					fetch(url).then(resp=>{
+						var contentType = resp.headers.get('Content-Type');
+						if(!contentType) reject("No Content Type");
+						var raw = resp.arrayBuffer().then(buffer=>{
+							var arr = new Uint8Array(buffer);
+							var raw = String.fromCharCode.apply(null,arr);
+							var base64 = new ASCIIEncoder().setOutputPreset('base64').encode(raw);
+							resolve(`data:${contentType};base64,${base64}`);
+						}).catch(reject);
+					}).catch(reject);
+				});
+			}
+			
+		</script>
+	</body>
+</html>
